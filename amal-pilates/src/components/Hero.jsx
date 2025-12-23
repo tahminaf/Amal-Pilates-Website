@@ -1,0 +1,131 @@
+import React from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+
+const Hero = () => {
+  const { scrollY } = useScroll();
+  const heroOpacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const heroScale = useTransform(scrollY, [0, 300], [1, 0.95]);
+
+  return (
+    <motion.section 
+      style={{ opacity: heroOpacity, scale: heroScale }}
+      className="relative pt-20 pb-20 px-4 sm:px-6 lg:px-12 min-h-screen flex items-center"
+    >
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mb-3 sm:mb-4"
+            >
+              <p className="text-base sm:text-lg text-[#6B5B52] mb-1" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                Move with Purpose.
+              </p>
+              <p className="text-base sm:text-lg text-[#6B5B52]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                Reform with Hope.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="mb-6 sm:mb-8 -ml-8 sm:-ml-12 lg:-ml-16"
+            >
+              <img 
+                src="/brown_logo.png" 
+                alt="Amal Pilates Logo" 
+                className="w-full max-w-sm sm:max-w-md lg:max-w-lg h-auto"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="space-y-3 sm:space-y-4"
+            >
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#4A3F38] font-light leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                MOVEMENT,<br />
+                <span className="italic">REFINED.</span>
+              </h2>
+              <p className="text-sm sm:text-base text-[#6B5B52] leading-relaxed font-light max-w-xl" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                Small-group classes designed to build strength, control, and structure with precision and performance. 
+                The method is refined, disciplined, and built for lasting results.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full sm:w-auto bg-[#6B5B52] text-[#EBE4DC] px-8 py-3 text-sm tracking-[0.15em] hover:bg-[#4A3F38] transition-all duration-300"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  START YOUR JOURNEY
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full sm:w-auto border-2 border-[#6B5B52] text-[#6B5B52] px-8 py-3 text-sm tracking-[0.15em] hover:bg-[#6B5B52] hover:text-[#EBE4DC] transition-all duration-300"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  VIEW SCHEDULE
+                </motion.button>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="relative hidden md:block"
+          >
+            <div className="aspect-[3/4] bg-[#D9CFC3] relative overflow-hidden">
+              <img 
+                src="/full_body.jpg"
+                alt="Pilates Practice" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {/* Decorative element */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              className="absolute -bottom-8 -right-8 w-32 h-32 border-2 border-[#6B5B52]/20"
+            ></motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5 }}
+        className="absolute bottom-2 sm:bottom-4 lg:bottom-6 left-1/2 transform -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+          className="flex flex-col items-center gap-2"
+        >
+          <span className="text-[#6B5B52] text-xs tracking-[0.2em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+            SCROLL
+          </span>
+          <div className="w-px h-16 bg-[#6B5B52]/30"></div>
+        </motion.div>
+      </motion.div>
+    </motion.section>
+  );
+};
+
+export default Hero;
