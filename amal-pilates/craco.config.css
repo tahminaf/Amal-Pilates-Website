@@ -1,0 +1,13 @@
+cat > craco.config.js << 'EOF'
+module.exports = {
+  style: {
+    postcss: {
+      mode: 'extends',
+      loaderOptions: (postcssLoaderOptions) => {
+        console.log('PostCSS is running!');
+        return postcssLoaderOptions;
+      },
+    },
+  },
+};
+EOF
