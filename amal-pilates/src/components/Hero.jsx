@@ -8,6 +8,7 @@ const Hero = () => {
 
   return (
     <motion.section 
+      id="hero"
       style={{ opacity: heroOpacity, scale: heroScale }}
       className="relative pt-20 pb-20 px-4 sm:px-6 lg:px-12 min-h-screen flex items-center"
     >
@@ -95,13 +96,6 @@ const Hero = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            {/* Decorative element */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-              className="absolute -bottom-8 -right-8 w-32 h-32 border-2 border-[#6B5B52]/20"
-            ></motion.div>
           </motion.div>
         </div>
       </div>
