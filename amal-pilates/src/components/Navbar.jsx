@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navItems = [
     { name: 'HOME', target: 'hero' },
@@ -13,12 +16,36 @@ const Navbar = () => {
   ];
 
   const smoothScroll = (targetId) => {
-    const element = document.getElementById(targetId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+    // If we're on the booking page, navigate to home first, then scroll
+    if (location.pathname === '/booking') {
+      navigate('/');
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    } else {
+      // Already on home page, just scroll
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  };
+
+  const handleLogoClick = () => {
+    if (location.pathname === '/booking') {
+      navigate('/');
+    } else {
+      smoothScroll('hero');
     }
   };
 
@@ -32,7 +59,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             className="flex-shrink-0 cursor-pointer"
-            onClick={() => smoothScroll('hero')}
+            onClick={handleLogoClick}
           >
             <img 
               src={`${process.env.PUBLIC_URL}/brown_logo.png`}
@@ -59,15 +86,17 @@ const Navbar = () => {
           </div>
 
           {/* CTA Button */}
-          <motion.button
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="hidden md:block bg-[#6B5B52] text-[#EBE4DC] px-8 py-3 text-sm tracking-[0.1em] hover:bg-[#4A3F38] transition-all duration-300"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
-          >
-            BOOK NOW
-          </motion.button>
+          <Link to="/booking">
+            <motion.button
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="hidden md:block bg-[#6B5B52] text-[#EBE4DC] px-8 py-3 text-sm tracking-[0.1em] hover:bg-[#4A3F38] transition-all duration-300 cursor-pointer"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              BOOK NOW
+            </motion.button>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
@@ -107,12 +136,15 @@ const Navbar = () => {
                 {item.name}
               </button>
             ))}
-            <button 
-              className="w-full bg-[#6B5B52] text-[#EBE4DC] px-8 py-3 text-sm tracking-[0.1em]" 
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
-            >
-              BOOK NOW
-            </button>
+            <Link to="/booking" className="block">
+              <button 
+                onClick={() => setIsMenuOpen(false)}
+                className="w-full bg-[#6B5B52] text-[#EBE4DC] px-8 py-3 text-sm tracking-[0.1em] cursor-pointer" 
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                BOOK NOW
+              </button>
+            </Link>
           </div>
         </motion.div>
       )}
