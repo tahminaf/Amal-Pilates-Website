@@ -1,7 +1,59 @@
 import React from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Footer = () => {
-  const quickLinks = ['Schedule', 'Pricing', 'About', 'Contact', 'FAQs'];
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const quickLinks = [
+    { name: 'Schedule', path: '/schedule', type: 'navigate' },
+    { name: 'Pricing', path: '/booking', type: 'navigate' },
+    { name: 'About', scrollTo: 'philosophy', type: 'scroll' },
+    { name: 'Contact', path: 'mailto:hello@amalpilates.com', type: 'email' },
+  ];
+
+  const handleLinkClick = (link) => {
+    if (link.type === 'email') {
+      window.location.href = link.path;
+    } else if (link.type === 'scroll') {
+      // Need to navigate to home first if not already there
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.getElementById(link.scrollTo);
+          if (element) {
+            const offset = link.scrollTo === 'philosophy' ? 100 : 0;
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({
+              top: elementPosition - offset,
+              behavior: 'smooth'
+            });
+          }
+        }, 100);
+      } else {
+        const element = document.getElementById(link.scrollTo);
+        if (element) {
+          const offset = link.scrollTo === 'philosophy' ? 100 : 0;
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: elementPosition - offset,
+            behavior: 'smooth'
+          });
+        }
+      }
+    }
+  };
+
+  const handleLogoClick = () => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <footer id="footer" className="bg-[#4A3F38] text-[#EBE4DC] py-12 sm:py-16 px-4 sm:px-6 lg:px-12">
@@ -12,7 +64,8 @@ const Footer = () => {
             <img 
               src={`${process.env.PUBLIC_URL}/cream_logo.png`}
               alt="Amal Pilates Logo" 
-              className="h-auto w-full max-w-[200px] object-contain"
+              className="h-auto w-full max-w-[200px] object-contain cursor-pointer"
+              onClick={handleLogoClick}
             />
             <p className="text-[#EBE4DC]/60 text-sm leading-relaxed" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               Movement, refined. Now in Brooklyn.
@@ -24,9 +77,31 @@ const Footer = () => {
             <h4 className="text-sm tracking-[0.2em] mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               STUDIO
             </h4>
-            <div className="space-y-2 text-[#EBE4DC]/60 text-sm" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-              <p>4312 Coney Island Ave,</p>
-              <p>Brooklyn, NY 11218</p>
+            <div className="space-y-4 text-[#EBE4DC]/60 text-sm" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+              <div className="space-y-2">
+                <p>4312 Coney Island Ave,</p>
+                <p>Brooklyn, NY 11218</p>
+              </div>
+              
+              {/* App Store Button */}
+              <a 
+                href="https://apps.apple.com/us/app/amal-pilates/id6756589606" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-[#EBE4DC] text-[#473c38] px-6 py-4 rounded-lg hover:bg-white transition-all duration-300"
+              >
+                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+                <div className="text-left">
+                  <div className="text-[10px] leading-none" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                    Download on the
+                  </div>
+                  <div className="text-base font-semibold leading-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                    App Store
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
 
@@ -37,14 +112,34 @@ const Footer = () => {
             </h4>
             <div className="space-y-2">
               {quickLinks.map((link) => (
-                <a
-                  key={link}
-                  href={`#${link.toLowerCase()}`}
-                  className="block text-[#EBE4DC]/60 text-sm hover:text-[#EBE4DC] transition-colors"
-                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                >
-                  {link}
-                </a>
+                link.type === 'email' ? (
+                  <a
+                    key={link.name}
+                    href={link.path}
+                    className="block text-[#EBE4DC]/60 text-sm hover:text-[#EBE4DC] transition-colors"
+                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                  >
+                    {link.name}
+                  </a>
+                ) : link.type === 'scroll' ? (
+                  <button
+                    key={link.name}
+                    onClick={() => handleLinkClick(link)}
+                    className="block text-left text-[#EBE4DC]/60 text-sm hover:text-[#EBE4DC] transition-colors"
+                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                  >
+                    {link.name}
+                  </button>
+                ) : (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    className="block text-[#EBE4DC]/60 text-sm hover:text-[#EBE4DC] transition-colors"
+                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
             </div>
           </div>
@@ -74,14 +169,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-[#EBE4DC]/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-[#EBE4DC]/20 pt-8 text-center">
           <p className="text-[#EBE4DC]/40 text-xs tracking-wide" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             © 2025 AMAL PILATES. ALL RIGHTS RESERVED.
           </p>
-          <div className="flex gap-6 text-[#EBE4DC]/40 text-xs tracking-wide" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-            <a href="#" className="hover:text-[#EBE4DC] transition-colors">PRIVACY POLICY</a>
-            <a href="#" className="hover:text-[#EBE4DC] transition-colors">TERMS OF SERVICE</a>
-          </div>
         </div>
       </div>
     </footer>

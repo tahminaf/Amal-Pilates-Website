@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 const BookingPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <div className="min-h-screen bg-[#EBE4DC] pt-20">
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-[#EBE4DC] pt-20">
       {/* Page Header */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -12,7 +19,7 @@ const BookingPage = () => {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8"
       >
         <h1 
-          className="text-4xl md:text-5xl text-[#6B5B52] tracking-[0.1em] font-light text-center mb-8"
+          className="text-4xl md:text-5xl text-[#473c38] tracking-[0.1em] font-light text-center mb-8"
           style={{ fontFamily: "'Montserrat', sans-serif" }}
         >
           BOOK YOUR SESSION
@@ -36,6 +43,8 @@ const BookingPage = () => {
         </div>
       </motion.div>
     </div>
+    <Footer />
+    </>
   );
 };
 

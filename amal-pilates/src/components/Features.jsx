@@ -32,7 +32,7 @@ const Features = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 lg:mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-[#6B5B52] mb-6" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-[#473c38] mb-6" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
             The Experience
           </h2>
         </motion.div>

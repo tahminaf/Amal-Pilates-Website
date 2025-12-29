@@ -48,13 +48,13 @@ const FeatureCard = ({ feature, index }) => {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="text-center space-y-4"
     >
-      <div className="w-16 h-16 mx-auto flex items-center justify-center text-[#6B5B52]">
+      <div className="w-16 h-16 mx-auto flex items-center justify-center text-[#473c38]">
         {getIcon()}
       </div>
-      <h3 className="text-xl tracking-[0.1em] text-[#6B5B52] font-light" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+      <h3 className="text-xl tracking-[0.1em] text-[#473c38] font-light" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
         {title}
       </h3>
-      <p className="text-[#6B5B52]/70 leading-relaxed" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+      <p className="text-[#473c38]/70 leading-relaxed" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
         {description}
       </p>
     </motion.div>

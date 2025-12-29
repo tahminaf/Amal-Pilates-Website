@@ -8,15 +8,17 @@ import Features from './components/Features';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import BookingPage from './components/BookingPage';
+import Schedule from './components/Schedule';
 
 // Home page component with all sections
 const HomePage = () => {
   return (
     <>
+      <Navbar />
       <Hero />
+      <Features />
       <Philosophy />
       <Pricing />
-      <Features />
       <CTA />
       <Footer />
     </>
@@ -27,10 +29,10 @@ const PilatesWebsite = () => {
   return (
     <Router>
       <div className="bg-[#EBE4DC] min-h-screen">
-        <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/booking" element={<BookingPage />} />
+          <Route path="/schedule" element={<Schedule />} />
         </Routes>
       </div>
     </Router>

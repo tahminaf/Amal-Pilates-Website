@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Hero = () => {
@@ -26,10 +27,10 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="mb-3 sm:mb-4"
             >
-              <p className="text-base sm:text-lg text-[#6B5B52] mb-1" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+              <p className="text-base sm:text-lg text-[#473c38] mb-1" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                 Move with Purpose.
               </p>
-              <p className="text-base sm:text-lg text-[#6B5B52]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+              <p className="text-base sm:text-lg text-[#473c38]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                 Reform with Hope.
               </p>
             </motion.div>
@@ -54,30 +55,33 @@ const Hero = () => {
               className="space-y-3 sm:space-y-4"
             >
               <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#4A3F38] font-light leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                MOVEMENT,<br />
-                <span className="italic">REFINED.</span>
+                Be among the first to<br />
+                experience Amal Pilates.
               </h2>
-              <p className="text-sm sm:text-base text-[#6B5B52] leading-relaxed font-light max-w-xl" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                Small-group classes designed to build strength, control, and structure with precision and performance. 
-                The method is refined, disciplined, and built for lasting results.
+              <p className="text-sm sm:text-base text-[#473c38] leading-relaxed font-light max-w-xl" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                Secure your spot before our official opening and enjoy: Exclusive pre-opening pricing. Priority class booking. Special Founding Member perks just for you.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full sm:w-auto bg-[#6B5B52] text-[#EBE4DC] px-8 py-3 text-sm tracking-[0.15em] hover:bg-[#4A3F38] transition-all duration-300"
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}
-                >
-                  START YOUR JOURNEY
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full sm:w-auto border-2 border-[#6B5B52] text-[#6B5B52] px-8 py-3 text-sm tracking-[0.15em] hover:bg-[#6B5B52] hover:text-[#EBE4DC] transition-all duration-300"
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}
-                >
-                  VIEW SCHEDULE
-                </motion.button>
+                <Link to="/booking" className="w-full sm:w-auto">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full sm:w-auto bg-[#473c38] text-[#EBE4DC] px-14 py-4 text-sm tracking-[0.30em] hover:bg-[#4A3F38] transition-all duration-300"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    JOIN NOW
+                  </motion.button>
+                </Link>
+                <Link to="/schedule" className="w-full sm:w-auto">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full sm:w-auto border-2 border-[#473c38] text-[#473c38] px-8 py-3 text-sm tracking-[0.15em] hover:bg-[#473c38] hover:text-[#EBE4DC] transition-all duration-300"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    VIEW SCHEDULE
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
           </motion.div>
@@ -105,17 +109,17 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-2 sm:bottom-4 lg:bottom-6 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-[-4rem] sm:bottom-[-4rem] lg:bottom-[-2rem] left-1/2 transform -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
           className="flex flex-col items-center gap-2"
         >
-          <span className="text-[#6B5B52] text-xs tracking-[0.2em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+          <span className="text-[#473c38] text-xs tracking-[0.2em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             SCROLL
           </span>
-          <div className="w-px h-16 bg-[#6B5B52]/30"></div>
+          <div className="w-px h-16 bg-[#473c38]/30"></div>
         </motion.div>
       </motion.div>
     </motion.section>
