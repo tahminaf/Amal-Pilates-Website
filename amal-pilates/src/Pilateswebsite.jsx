@@ -16,9 +16,7 @@ const HomePage = () => {
     <>
       <Navbar />
       <Hero />
-      <Features />
       <Philosophy />
-      <Pricing />
       <CTA />
       <Footer />
     </>
