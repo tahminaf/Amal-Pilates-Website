@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 const Philosophy = () => {
   return (
     <section id="philosophy" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-12 bg-[#473c38] text-[#EBE4DC]">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -13,9 +13,9 @@ const Philosophy = () => {
             transition={{ duration: 0.8 }}
             className="flex items-center justify-center mb-8 lg:mb-0"
           >
-            <div className="aspect-square w-full max-w-sm lg:max-w-md bg-[#D9CFC3] relative overflow-hidden">
+            <div className="aspect-square w-full max-w-xs lg:max-w-sm bg-[#D9CFC3] relative overflow-hidden">
               <img 
-                src="/IMG_6982.jpeg"
+                src="/leg_pic.jpg"
                 alt="Studio Interior" 
                 className="w-full h-full object-cover"
               />
@@ -28,7 +28,7 @@ const Philosophy = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light mb-6 lg:mb-8 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-light mb-6 lg:mb-8 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               Where Strength Begins With Hope
             </h2>
             <div className="space-y-4 lg:space-y-6 text-[#EBE4DC]/80 text-base lg:text-lg leading-relaxed" style={{ fontFamily: "'Cormorant Garamond', serif" }}>

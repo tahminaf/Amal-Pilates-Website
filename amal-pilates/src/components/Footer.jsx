@@ -85,7 +85,7 @@ const Footer = () => {
               
               {/* App Store Button */}
               <a 
-                href="https://apps.apple.com/us/app/mariana-tek/id1025514298" 
+                href="https://apps.apple.com/us/app/amal-pilates/id6756589606" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-[#EBE4DC] text-[#473c38] px-6 py-4 rounded-lg hover:bg-white transition-all duration-300"

@@ -112,9 +112,9 @@ const Navbar = () => {
             onClick={handleLogoClick}
           >
             <img 
-              src={`${process.env.PUBLIC_URL}/brown_logo.png`}
+              src={`${process.env.PUBLIC_URL}/AP1.png`}
               alt="Amal Pilates Logo" 
-              className="h-16 sm:h-20 lg:h-24 w-auto"
+              className="h-20 sm:h-24 lg:h-24 w-auto"
             />
           </motion.div>
 
