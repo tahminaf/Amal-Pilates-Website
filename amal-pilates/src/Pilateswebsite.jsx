@@ -10,6 +10,7 @@ import CTA from './components/CTA';
 import Footer from './components/Footer';
 import BookingPage from './components/BookingPage';
 import Schedule from './components/Schedule';
+import WhatWeOffer from './components/WhatWeOffer';
 
 // Home page component with all sections
 const HomePage = () => {
@@ -32,6 +33,7 @@ const PilatesWebsite = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/booking" element={<BookingPage />} />
           <Route path="/schedule" element={<Schedule />} />
+          <Route path="/what-we-offer" element={<WhatWeOffer />} />
         </Routes>
       </div>
     </Router>

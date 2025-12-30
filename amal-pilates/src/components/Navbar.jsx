@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -11,7 +12,14 @@ const Navbar = () => {
     { name: 'HOME', target: '/', type: 'navigate' },
     { name: 'SCHEDULE', target: '/schedule', type: 'navigate' },
     { name: 'PRICING', target: '/booking', type: 'navigate' },
-    { name: 'ABOUT', target: 'philosophy', type: 'scroll' },
+    { 
+      name: 'ABOUT', 
+      type: 'dropdown',
+      dropdownItems: [
+        { name: 'What Amal Is', target: 'philosophy', type: 'scroll' },
+        { name: 'What We Offer', target: '/what-we-offer', type: 'navigate' }
+      ]
+    },
     { name: 'CONTACT', target: 'mailto:hello@amalpilates.com', type: 'email' }
   ];
 
@@ -121,17 +129,61 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-12">
             {navItems.map((item, index) => (
-              <motion.button
-                key={item.name}
-                onClick={() => handleNavClick(item)}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-[#473c38] text-sm tracking-[0.15em] font-light hover:text-[#4A3F38] transition-colors duration-300"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
-              >
-                {item.name}
-              </motion.button>
+              item.type === 'dropdown' ? (
+                <div 
+                  key={item.name}
+                  className="relative"
+                  onMouseEnter={() => setIsAboutDropdownOpen(true)}
+                  onMouseLeave={() => setIsAboutDropdownOpen(false)}
+                >
+                  <motion.button
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="text-[#473c38] text-sm tracking-[0.15em] font-light hover:text-[#4A3F38] transition-colors duration-300"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    {item.name}
+                  </motion.button>
+                  
+                  {/* Dropdown Menu */}
+                  {isAboutDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg border border-[#473c38]/10 py-2"
+                    >
+                      {item.dropdownItems.map((dropdownItem) => (
+                        <button
+                          key={dropdownItem.name}
+                          onClick={() => {
+                            handleNavClick(dropdownItem);
+                            setIsAboutDropdownOpen(false);
+                          }}
+                          className="block w-full text-left px-4 py-2 text-[#473c38] text-sm hover:bg-[#EBE4DC] transition-colors"
+                          style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                        >
+                          {dropdownItem.name}
+                        </button>
+                      ))}
+                    </motion.div>
+                  )}
+                </div>
+              ) : (
+                <motion.button
+                  key={item.name}
+                  onClick={() => handleNavClick(item)}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="text-[#473c38] text-sm tracking-[0.15em] font-light hover:text-[#4A3F38] transition-colors duration-300"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  {item.name}
+                </motion.button>
+              )
             ))}
           </div>
 
@@ -207,17 +259,40 @@ const Navbar = () => {
         >
           <div className="px-6 py-6 space-y-4">
             {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => {
-                  handleNavClick(item);
-                  setIsMenuOpen(false);
-                }}
-                className="block w-full text-left text-[#473c38] text-sm tracking-[0.15em] font-light hover:text-[#4A3F38]"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
-              >
-                {item.name}
-              </button>
+              item.type === 'dropdown' ? (
+                <div key={item.name} className="space-y-2">
+                  <div className="text-[#473c38] text-sm tracking-[0.15em] font-light" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                    {item.name}
+                  </div>
+                  <div className="pl-4 space-y-2">
+                    {item.dropdownItems.map((dropdownItem) => (
+                      <button
+                        key={dropdownItem.name}
+                        onClick={() => {
+                          handleNavClick(dropdownItem);
+                          setIsMenuOpen(false);
+                        }}
+                        className="block w-full text-left text-[#473c38]/70 text-sm hover:text-[#4A3F38]"
+                        style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                      >
+                        {dropdownItem.name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <button
+                  key={item.name}
+                  onClick={() => {
+                    handleNavClick(item);
+                    setIsMenuOpen(false);
+                  }}
+                  className="block w-full text-left text-[#473c38] text-sm tracking-[0.15em] font-light hover:text-[#4A3F38]"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  {item.name}
+                </button>
+              )
             ))}
             <Link to="/booking" className="block">
               <button 
