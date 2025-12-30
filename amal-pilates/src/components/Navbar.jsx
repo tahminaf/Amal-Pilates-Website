@@ -153,21 +153,23 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg border border-[#473c38]/10 py-2"
+                      className="absolute top-full left-0 pt-2 w-48"
                     >
-                      {item.dropdownItems.map((dropdownItem) => (
-                        <button
-                          key={dropdownItem.name}
-                          onClick={() => {
-                            handleNavClick(dropdownItem);
-                            setIsAboutDropdownOpen(false);
-                          }}
-                          className="block w-full text-left px-4 py-2 text-[#473c38] text-sm hover:bg-[#EBE4DC] transition-colors"
-                          style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                        >
-                          {dropdownItem.name}
-                        </button>
-                      ))}
+                      <div className="bg-white shadow-lg border border-[#473c38]/10 py-2">
+                        {item.dropdownItems.map((dropdownItem) => (
+                          <button
+                            key={dropdownItem.name}
+                            onClick={() => {
+                              handleNavClick(dropdownItem);
+                              setIsAboutDropdownOpen(false);
+                            }}
+                            className="block w-full text-left px-4 py-3 text-[#473c38] text-sm hover:bg-[#EBE4DC] transition-colors"
+                            style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                          >
+                            {dropdownItem.name}
+                          </button>
+                        ))}
+                      </div>
                     </motion.div>
                   )}
                 </div>

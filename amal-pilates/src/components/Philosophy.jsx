@@ -13,7 +13,7 @@ const Philosophy = () => {
             transition={{ duration: 0.8 }}
             className="flex items-center justify-center mb-8 lg:mb-0"
           >
-            <div className="aspect-square w-full max-w-lg max-w-[400px] lg:max-w-[480px] bg-[#D9CFC3] relative overflow-hidden">
+            <div className="aspect-square w-full max-w-lg max-w-[300px] lg:max-w-[480px] bg-[#D9CFC3] relative overflow-hidden">
               <img 
                 src="/IMG_6982.jpeg"
                 alt="Studio Interior" 

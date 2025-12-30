@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
 const WhatWeOffer = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const offerings = [
     {
       title: 'Reformer Pilates',
@@ -60,7 +64,7 @@ const WhatWeOffer = () => {
       </section>
 
       {/* Offerings Grid */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-12">
+      <section className="py-8 sm:py-10 px-4 sm:px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
             {offerings.map((offering, index) => (
