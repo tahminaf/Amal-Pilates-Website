@@ -15,7 +15,7 @@ const Philosophy = () => {
           >
             <div className="aspect-square w-full max-w-xs lg:max-w-sm bg-[#D9CFC3] relative overflow-hidden">
               <img 
-                src="/leg_pic.jpg"
+                src="/IMG_6982.jpeg"
                 alt="Studio Interior" 
                 className="w-full h-full object-cover"
               />
