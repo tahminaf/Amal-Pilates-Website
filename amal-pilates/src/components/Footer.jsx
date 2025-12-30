@@ -56,7 +56,7 @@ const Footer = () => {
   };
 
   return (
-    <footer id="footer" className="bg-[#4A3F38] text-[#EBE4DC] py-12 sm:py-16 px-4 sm:px-6 lg:px-12">
+    <footer id="footer" className="bg-[#473c38] text-[#EBE4DC] py-12 sm:py-16 px-4 sm:px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8 lg:mb-12">
           {/* Brand */}
@@ -85,7 +85,7 @@ const Footer = () => {
               
               {/* App Store Button */}
               <a 
-                href="https://apps.apple.com/us/app/amal-pilates/id6756589606" 
+                href="https://apps.apple.com/us/app/mariana-tek/id1025514298" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-[#EBE4DC] text-[#473c38] px-6 py-4 rounded-lg hover:bg-white transition-all duration-300"

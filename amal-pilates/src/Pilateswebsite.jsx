@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Philosophy from './components/Philosophy';
+import InstagramGallery from './components/InstagramGallery';
 import Pricing from './components/Pricing';
 import Features from './components/Features';
 import CTA from './components/CTA';
@@ -17,7 +18,7 @@ const HomePage = () => {
       <Navbar />
       <Hero />
       <Philosophy />
-      <CTA />
+      <InstagramGallery />
       <Footer />
     </>
   );

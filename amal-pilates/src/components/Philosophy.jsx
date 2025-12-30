@@ -11,21 +11,14 @@ const Philosophy = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
+            className="flex items-center justify-center mb-8 lg:mb-0"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 lg:mb-8 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-              This isn't just Pilates.<br />
-              This is <span className="italic">amal</span>.
-            </h2>
-            <div className="space-y-4 lg:space-y-6 text-[#EBE4DC]/80 text-base lg:text-lg leading-relaxed" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-              <p>
-                1:1 private sessions offer focused attention, personal programming, and a tailored experience 
-                designed entirely for your goals.
-              </p>
-              <p>
-                Our boutique reformer Pilates studio in the heart of the city combines classical technique 
-                with contemporary movement science. Every session is an opportunity to refine your practice, 
-                challenge your limits, and discover what your body is truly capable of.
-              </p>
+            <div className="aspect-square w-full max-w-sm lg:max-w-md bg-[#D9CFC3] relative overflow-hidden">
+              <img 
+                src="/leg_pic.jpg"
+                alt="Studio Interior" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
 
@@ -34,14 +27,17 @@ const Philosophy = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex items-center justify-center mt-8 lg:mt-0"
           >
-            <div className="aspect-square w-full max-w-sm lg:max-w-md bg-[#D9CFC3] relative overflow-hidden">
-              <img 
-                src="/leg_pic.jpg"
-                alt="Studio Interior" 
-                className="w-full h-full object-cover"
-              />
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 lg:mb-8 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+              Where Strength Begins With Hope
+            </h2>
+            <div className="space-y-4 lg:space-y-6 text-[#EBE4DC]/80 text-base lg:text-lg leading-relaxed" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+              <p>
+                Derived from the word hope, Amal represents the journey of becoming stronger, clearer, and more grounded. Across languages, Amal carries meanings of hope, purity, effort, and love, and each reflects what we practice within our studio.
+              </p>
+              <p>
+                Our boutique reformer studio is designed with warmth and intention, where thoughtful interiors meet high-quality equipment, expert instruction, and an atmosphere that feels calm, inviting, and motivating.
+              </p>
             </div>
           </motion.div>
         </div>
