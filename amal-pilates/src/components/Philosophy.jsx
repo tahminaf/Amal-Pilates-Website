@@ -15,7 +15,7 @@ const Philosophy = () => {
           >
             <div className="aspect-square w-full max-w-sm lg:max-w-md bg-[#D9CFC3] relative overflow-hidden">
               <img 
-                src="/leg_pic.jpg"
+                src="/IMG_6982.jpeg"
                 alt="Studio Interior" 
                 className="w-full h-full object-cover"
               />
@@ -28,7 +28,7 @@ const Philosophy = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 lg:mb-8 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light mb-6 lg:mb-8 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               Where Strength Begins With Hope
             </h2>
             <div className="space-y-4 lg:space-y-6 text-[#EBE4DC]/80 text-base lg:text-lg leading-relaxed" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
