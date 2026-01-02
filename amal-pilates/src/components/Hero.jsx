@@ -60,7 +60,7 @@ const Hero = () => {
                 experience Amal Pilates.
               </h2>
               <p className="text-sm sm:text-base text-[#473c38] leading-relaxed font-light max-w-xl mx-auto lg:mx-0" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                Secure your spot before our official opening and become part of something special. As a member, you'll enjoy exclusive pre-opening pricing, priority class bookings, complimentary guest passes, and special perks designed just for you.
+                Secure your spot before our official opening and become part of something special. As a member, you'll enjoy exclusive pre-opening pricing, priority access to class bookings, complimentary guest passes, and special perks designed just for you.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 justify-center lg:justify-start">
                 <Link to="/booking" className="w-full sm:w-auto">
