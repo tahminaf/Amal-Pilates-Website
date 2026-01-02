@@ -57,7 +57,7 @@ const InstagramGallery = () => {
         </motion.div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {instagramPosts.map((post, index) => {
             // Custom object position for each image
             let objectPosition = 'center';

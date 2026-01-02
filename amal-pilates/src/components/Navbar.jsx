@@ -10,8 +10,6 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'HOME', target: '/', type: 'navigate' },
-    { name: 'SCHEDULE', target: '/schedule', type: 'navigate' },
-    { name: 'PRICING', target: '/booking', type: 'navigate' },
     { 
       name: 'ABOUT', 
       type: 'dropdown',
@@ -20,6 +18,8 @@ const Navbar = () => {
         { name: 'What We Offer', target: '/what-we-offer', type: 'navigate' }
       ]
     },
+    { name: 'SCHEDULE', target: '/schedule', type: 'navigate' },
+    { name: 'PRICING', target: '/booking', type: 'navigate' },
     { name: 'CONTACT', target: 'mailto:hello@amalpilates.com', type: 'email' }
   ];
 

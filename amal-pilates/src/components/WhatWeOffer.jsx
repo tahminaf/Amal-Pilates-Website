@@ -14,11 +14,11 @@ const WhatWeOffer = () => {
       description: 'Small group reformer classes that sculpt, lengthen, strengthen, and remind you your core exists. Curated playlists set the vibe, intentional movement does the rest.'
     },
     {
-      title: 'Private Bookings',
+      title: 'Private + Corporate Bookings',
       description: 'Your own Pilates moment. Perfect for birthdays, bachelorettes, wellness weekends, team outings, or simply gathering your favorite people to move together in style.'
     },
     {
-      title: 'Workshops + Events',
+      title: 'Pop-Ups + Events',
       description: 'Technique sessions, community hangs, guest instructors, mindfulness pop ups. Come for the movement, stay for the energy.'
     },
     {
