@@ -20,6 +20,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
+            className="flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -39,7 +40,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="mb-6 sm:mb-8 -ml-8 sm:-ml-12 lg:-ml-16"
+              className="mb-6 sm:mb-8 lg:-ml-16"
             >
               <img 
                 src="/brown_logo.png" 
@@ -52,16 +53,16 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="space-y-3 sm:space-y-4"
+              className="space-y-3 sm:space-y-4 w-full"
             >
               <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#4A3F38] font-light leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                 Be among the first to<br />
                 experience Amal Pilates.
               </h2>
-              <p className="text-sm sm:text-base text-[#473c38] leading-relaxed font-light max-w-xl" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+              <p className="text-sm sm:text-base text-[#473c38] leading-relaxed font-light max-w-xl mx-auto lg:mx-0" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                 Secure your spot before our official opening and enjoy: Exclusive pre-opening pricing. Priority class booking. Special Founding Member perks just for you.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 justify-center lg:justify-start">
                 <Link to="/booking" className="w-full sm:w-auto">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
