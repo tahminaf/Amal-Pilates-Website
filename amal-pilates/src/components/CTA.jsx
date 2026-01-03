@@ -24,7 +24,7 @@ const CTA = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto bg-[#473c38] text-[#EBE4DC] px-12 py-5 text-sm tracking-[0.15em] hover:bg-[#4A3F38] transition-all duration-300"
+                className="w-full sm:w-auto bg-[#473c38] text-[#473c38] px-12 py-5 text-sm tracking-[0.15em] hover:bg-[#473c38] transition-all duration-300"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 BOOK YOUR INTRO
@@ -34,7 +34,7 @@ const CTA = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto border-2 border-[#473c38] text-[#473c38] px-12 py-5 text-sm tracking-[0.15em] hover:bg-[#473c38] hover:text-[#EBE4DC] transition-all duration-300"
+                className="w-full sm:w-auto border-2 border-[#473c38] text-[#473c38] px-12 py-5 text-sm tracking-[0.15em] hover:bg-[#473c38] hover:text-[#473c38] transition-all duration-300"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 CONTACT US

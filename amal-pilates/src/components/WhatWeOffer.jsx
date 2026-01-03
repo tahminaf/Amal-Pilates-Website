@@ -26,7 +26,7 @@ const WhatWeOffer = () => {
       description: 'Locker rooms, showers, and thoughtful touches that let you slow down, reset, and head back into the world feeling centered and refreshed.'
     },
     {
-      title: 'Infrared Sauna',
+      title: 'Sauna',
       description: 'Warm up, wind down, or do both. A cozy recovery ritual that supports circulation, relaxation, and that deep exhale your body has been waiting for.'
     },
     {
